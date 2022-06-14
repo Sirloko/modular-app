@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,6 @@
 */
 
 Route::prefix('finance')->group(function() {
-    Route::get('/', 'FinanceController@index');
-    Route::get('/invoice', 'FinanceController@index');
+    Route::get('/', 'FinanceController@index')->middleware(['auth'])->name('dashboard');
+    Route::get('/invoice', 'FinanceController@index')->middleware(['auth'])->name('dashboard');
 });
