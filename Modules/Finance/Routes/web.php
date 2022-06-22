@@ -12,6 +12,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('finance')->group(function() {
-    Route::get('/', 'FinanceController@index')->middleware(['auth'])->name('dashboard');
-    Route::get('/invoice', 'FinanceController@index')->middleware(['auth'])->name('dashboard');
+    Route::get('/', 'FinanceController@index')->middleware(['auth'])->name('finance');
+    Route::get('/invoice', 'FinanceController@index'); //->middleware(['auth'])->name('dashboard');
 });
